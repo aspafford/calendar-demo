@@ -12,18 +12,14 @@
 </head>
 
 <body ng-app="app">
-  <div class="container" ng-controller="AppCtrl" ng-cloak>
-    <div class="calendar">
-      <ul>
-        <li ng-repeat="timeslot in data.timeslots">
-        {{ timeslot.activity_name }}
-        </li>
-      </ul>
-    </div>
-  </div>
+
+  <ng-view>loading...</ng-view>
+
   <!-- Angular.js Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
   <!-- Application bootstrap -->
+  <script src="app/calendar/calendar.js"></script>
   <script src="app/services/services.js"></script>
   <script src="app/app.js"></script>
 </body>

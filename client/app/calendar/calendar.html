@@ -1,0 +1,16 @@
+<div class="container" ng-controller="CalendarCtrl" ng-cloak>
+  <div class="datePicker">
+    <ul>
+      <li><a href="/#/calendar/1">day 1</a></li>
+      <li><a href="/#/calendar/2">day 2</a></li>
+      <li><a href="/#/calendar/3">day 3</a></li>
+    </ul>
+  </div>
+  <div class="calendar">
+    <ul>
+      <li ng-repeat="timeslot in data.timeslots">
+        {{ timeslot.activity_name }}
+      </li>
+    </ul>
+  </div>
+</div>
