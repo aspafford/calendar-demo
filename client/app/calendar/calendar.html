@@ -7,9 +7,11 @@
     </ul>
   </div>
   <div class="calendar">
+    <h2>Activities for {{ data.fullDate }}</h2>
     <ul>
       <li ng-repeat="timeslot in data.timeslots">
         {{ timeslot.activity_name }}
+        {{ timeslot.start }}&ndash;{{ timeslot.end }}
       </li>
     </ul>
   </div>
