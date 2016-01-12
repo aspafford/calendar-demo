@@ -1,18 +1,21 @@
-<div class="container" ng-controller="CalendarCtrl" ng-cloak>
-  <div class="datePicker">
-    <ul>
-      <li><a href="/#/calendar/1">day 1</a></li>
-      <li><a href="/#/calendar/2">day 2</a></li>
-      <li><a href="/#/calendar/3">day 3</a></li>
-    </ul>
-  </div>
-  <div class="calendar">
-    <h2>Activities for {{ data.fullDate }}</h2>
-    <ul>
-      <li ng-repeat="timeslot in data.timeslots">
-        {{ timeslot.activity_name }}
-        {{ timeslot.start }}&ndash;{{ timeslot.end }}
-      </li>
-    </ul>
-  </div>
+<div class="container" ng-controller="CalendarCtrl" layout-fill layout="column" layout-align="top center" ng-cloak>
+  <md-card class="panel">
+    <md-card-content>
+      <div class="datePicker">
+        <ul>
+          <li><a href="/#/calendar/1">day 1</a></li>
+          <li><a href="/#/calendar/2">day 2</a></li>
+          <li><a href="/#/calendar/3">day 3</a></li>
+        </ul>
+      </div>
+      <div class="timeslots">
+        <h2>Activities for {{ data.fullDate }}</h2>
+        <ul>
+          <li ng-repeat="timeslot in data.timeslots">
+            {{ timeslot.activity_name }} {{ timeslot.start }}&ndash;{{ timeslot.end }}
+          </li>
+        </ul>
+      </div>
+    </md-card-content>
+  </md-card>
 </div>

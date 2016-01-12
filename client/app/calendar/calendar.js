@@ -1,7 +1,7 @@
 ;
 (function() {
   'use strict';
-  angular.module('app.calendar', [])
+  angular.module('app.calendar', ['ngMaterial'])
     .controller('CalendarCtrl', function($scope, $routeParams, Calendar) {
 
       var day = $routeParams.day;
