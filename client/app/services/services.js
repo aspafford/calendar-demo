@@ -2,6 +2,8 @@ angular.module('app.services', [])
 
 .factory('Calendar', function ($http) {
 
+  selectedDay = '1';
+
   var getTimeslots = function (day) {
     return $http({
       method: 'GET',
@@ -14,5 +16,6 @@ angular.module('app.services', [])
 
   return {
     getTimeslots: getTimeslots,
+    selectedDay: selectedDay
   };
 });

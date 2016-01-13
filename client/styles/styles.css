@@ -9,10 +9,35 @@
 
 html, body {
   background-color: #E3F2FD;
+  color: #616161;
 }
 
 .panel {
-  text-align: center;
   width: 100%;
   max-width: 800px;
+}
+
+.timeslots div {
+  border-radius: 3px;
+  color: white;
+  height: 100px;
+  margin: 2px 0;
+}
+
+.timeslots div div {
+  padding: 5px;
+}
+
+.activityName {
+  font-weight: bold;
+}
+
+.activity-1 {
+  background-color: #F06292;
+}
+.activity-2 {
+  background-color: #BA68C8;
+}
+.activity-3 {
+  background-color: #7986CB;
 }

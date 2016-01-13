@@ -1,20 +1,24 @@
-<div class="container" ng-controller="CalendarCtrl" layout-fill layout="column" layout-align="top center" ng-cloak>
+<div class="container" layout-fill layout="column" layout-align="top center" ng-cloak>
   <md-card class="panel">
     <md-card-content>
-      <div class="datePicker">
-        <ul>
-          <li><a href="/#/calendar/1">day 1</a></li>
-          <li><a href="/#/calendar/2">day 2</a></li>
-          <li><a href="/#/calendar/3">day 3</a></li>
-        </ul>
+      <div ng-controller="DatePickerCtrl as ctrl">
+        <md-input-container>
+          <label>Select Day</label>
+          <md-select ng-model="userDate" ng-change="change(userDate)">
+            <md-option ng-repeat="date in ctrl.date" value="{{ date }}" ng-selected="selected(date)">
+              Day {{ date }}
+            </md-option>
+          </md-select>
+        </md-input-container>
       </div>
-      <div class="timeslots">
-        <h2>Activities for {{ data.fullDate }}</h2>
-        <ul>
-          <li ng-repeat="timeslot in data.timeslots">
-            {{ timeslot.activity_name }} {{ timeslot.start }}&ndash;{{ timeslot.end }}
-          </li>
-        </ul>
+      <div ng-controller="CalendarCtrl" class="timeslots">
+        <h2>Showing Activities for {{ data.fullDate }}</h2>
+        <div ng-repeat="timeslot in data.timeslots" class="{{ timeslot.activity_name | spaceToDash | lowercase }}" style="width: {{ timeslot.divWidth }}; margin-left: {{ timeslot.divOffset}};">
+          <div>
+          <span class="activityName">{{ timeslot.activity_name }}</span><br>
+          {{ timeslot.startTime }}&ndash;{{ timeslot.endTime }}
+          </div>
+        </div>
       </div>
     </md-card-content>
   </md-card>
